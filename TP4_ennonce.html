@@ -183,11 +183,8 @@ pre code {
 <li><p>Appliquer cette fonction sur les données générées en question 1 avec <span class="math inline">\(\lambda = 1\)</span>.</p></li>
 <li><p>Simuler <span class="math inline">\(n=1000\)</span> réalisations d’une loi exponentielle de paramètre <span class="math inline">\(\lambda=1\)</span>.</p></li>
 <li><p>Sur un même graphique, représenter l’estimation de la densité des données générées en 4 et l’estimation de la densité des données générées en 5. Ajouter un titre et une légende. Que remarquez vous ?</p></li>
-<li><p>Définir une fonction <code>ccdf_exp</code> qui prend comme arguments un nombre réel <span class="math inline">\(x\)</span> et un autre nombre réel strictement positif <span class="math inline">\(\lambda\)</span>, qui renvoie un message d’erreur si <span class="math inline">\(\lambda\)</span> n’est pas défini correctement et qui renvoie sinon la valeur de la fonction de répartition théorique d’une loi exponentielle de paramètre <span class="math inline">\(\lambda\)</span> évaluer en <span class="math inline">\(x\)</span> (<span class="math inline">\(F(x) = \mathbb{P}(X \leq x) = 1 - \exp{(-\lambda x)}\)</span>) . Appliquer cette fonction en <span class="math inline">\(x=1\)</span> pour <span class="math inline">\(\lambda=1\)</span>.</p></li>
-</ol>
-<p>Que remarquez-vous ?</p>
-<ol start="8" style="list-style-type: decimal">
-<li><p>A l’aide de la fonction précédente, calculer : <span class="math inline">\(P(X&lt;3)\)</span> avec <span class="math inline">\(X\sim \mathcal{E}(2)\)</span>. Comparer le résultat avec celui renvoyé par la fonction <code>pexp()</code> de R.</p></li>
+<li><p>Définir une fonction <code>ccdf_exp</code> qui prend comme arguments un nombre réel <span class="math inline">\(x\)</span> et un autre nombre réel strictement positif <span class="math inline">\(\lambda\)</span>, qui renvoie un message d’erreur si <span class="math inline">\(\lambda\)</span> n’est pas défini correctement et qui renvoie sinon la valeur de la fonction de répartition théorique d’une loi exponentielle de paramètre <span class="math inline">\(\lambda\)</span> évaluer en <span class="math inline">\(x\)</span> (<span class="math inline">\(F(x) = \mathbb{P}(X \leq x) = 1 - \exp{(-\lambda x)}\)</span>) . Appliquer cette fonction en <span class="math inline">\(x=1\)</span> pour <span class="math inline">\(\lambda=1\)</span> et pour <span class="math inline">\(\lambda=-1\)</span>.</p></li>
+<li><p>A l’aide de la fonction précédente, calculer : <span class="math inline">\(P(X&lt;3)\)</span> où <span class="math inline">\(X\sim \mathcal{E}(2)\)</span>. Quelle fonction de R permet d’obtenir ce résultat ?</p></li>
 <li><p>Sur une même figure, tracer la fonction de répartition empirique des données générées en 4 et 5 et comparer ces estimations avec la fonction de répartition théorique d’une loi exponentielle de paramètre <span class="math inline">\(\lambda=1\)</span>.</p></li>
 <li><p>Donner le médiane théorique (quantile d’ordre <span class="math inline">\(0.5\)</span>) d’une loi exponentielle de paramètre <span class="math inline">\(\lambda = 1\)</span> et comparer cette valeur aux médianes calculées à partir des données générées aux questions 4 et 5.</p></li>
 </ol>
@@ -200,7 +197,7 @@ pre code {
 <li><p>Créer un objet <span class="math inline">\(Y = (y_1,\dots, y_n)\)</span> contenant <span class="math inline">\(n =1000\)</span> observations simulées selon le modèle linéaire simple en utilisant X et eps.</p></li>
 <li><p>Représenter graphiquement <span class="math inline">\(Y\)</span> en fonction <span class="math inline">\(X\)</span>.</p></li>
 <li><p>Tracer l’estimation de la densité de <span class="math inline">\(Y\)</span> et comparer-la à la densité estimée à partir de <span class="math inline">\(n=1000\)</span> réalisations d’une loi normale <span class="math inline">\(\mathcal{N}(\beta_0 + \beta_1x_i, 2)\)</span>. Que remarquez-vous ?</p></li>
-<li><p>A l’aide de la fonction <code>lm</code> effectuer la régression de <span class="math inline">\(Y\)</span> par <span class="math inline">\(X\)</span>.</p></li>
+<li><p>A l’aide de la fonction <code>lm</code> effectuer la régression de <span class="math inline">\(Y\)</span> par <span class="math inline">\(X\)</span>. Regarder le résultat de cette régression à l’aide de la fonction <code>summary</code>.</p></li>
 <li><p>Récupérer dans des objets <code>beta0_hat</code> et <code>beta1_hat</code> les estimations de <span class="math inline">\(\beta_0\)</span> et <span class="math inline">\(\beta_1\)</span>.</p></li>
 <li><p>Refaire le graphique de la question 14 en y rajoutant la droite de régression estimée.</p></li>
 <li><p>Représenter le nuage de points des valeurs prédites de <span class="math inline">\(Y\)</span> par la régression en fonction des vrais valeurs de <span class="math inline">\(Y\)</span> de deux manières différentes. Y ajouter la droite d’équation <span class="math inline">\(y=x\)</span>.</p></li>
@@ -214,7 +211,7 @@ pre code {
 <p>Afficher son arrondi à <span class="math inline">\(10^{-4}\)</span>.</p>
 <p>Vérifier le calcul en comparant au <span class="math inline">\(R^2\)</span> calculé automatiquement dans R.</p>
 <ol start="21" style="list-style-type: decimal">
-<li>On souhaite numériquement vérifier la convergence en loi de l’estimateur des moindre-carrés de <span class="math inline">\(\beta_1\)</span> :</li>
+<li>On souhaite vérifier numériquement la convergence en loi de l’estimateur des moindre carrés de <span class="math inline">\(\beta_1\)</span> :</li>
 </ol>
 <p><span class="math display">\[\hat{\beta_1} \sim \mathcal{N}\left(\beta_1, \frac{\sigma^2}{\sum\limits_{i=1}^n(x_i - \overline{x})^2}\right)\]</span></p>
 <p>où :</p>
